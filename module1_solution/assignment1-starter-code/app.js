@@ -16,6 +16,7 @@
       $scope.name = splice;
       // console.log($scope.name.length);
       // console.log($scope.name);
+
       //Checks if the menu given is empty
       var filtered = $scope.name.filter(function (el) {
           return el != "";
@@ -23,12 +24,10 @@
       $scope.name = filtered;
 
       // Checks the number of items in the menu
-      var output = submitMenu($scope.name.length);
+      var output = checkItems($scope.name.length);
     }
 
-
-
-    function submitMenu(string){
+    function checkItems(string){
 
       if (string == 0) {
         $scope.name = "Please Enter Data First!";
@@ -40,14 +39,6 @@
         $scope.name = "Too much!";
       }
     }
-
-
-
   }
-
-
-
 }
-
-
 )();
