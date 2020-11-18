@@ -12,7 +12,6 @@
     var toBuy = this;
 
     toBuy.list = ShoppingListCheckOff.getStock();
-    console.log("initial stock: ",toBuy.list.length);
       // console.log(itemIndex);
     // toBuy.notifMsg = e.message;
 
@@ -28,8 +27,6 @@
     var alreadyBought = this;
 
     alreadyBought.items = ShoppingListCheckOff.getAlreadyBought();
-    console.log("Items bought: ", alreadyBought.items.length);
-
   }
 
   function ShoppingListService(){
