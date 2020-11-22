@@ -86,6 +86,7 @@
                         var found = response.data.menu_items;
 
                         for (var i = 0; i < found.length; i++) {
+                          // if search is blank 
                             if (searchTerm === undefined) {
                                 console.log("EMPTY");
                             } else if (found[i].description.toLowerCase().indexOf(searchTerm.toLowerCase()) >= 0) {
