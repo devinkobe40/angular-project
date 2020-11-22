@@ -28,9 +28,6 @@
         function MenuItemsDirectiveController() {
             var menu = this;
 
-            menu.isEmpty = function() {
-                return menu.items.length === 0;
-            }
         }
 
 
@@ -51,8 +48,13 @@
                         // console.log("Items searched:  ",response.data.menu_items[2].name);
                         console.log("search: ", response);
                         narrow.list = response;
+                        if (narrow.list.length == 0) {
+                            console.log("Empty!");
+                        }
                     })
-                    .catch(function() {
+                    .catch(function(error) {
+                        narrow.errorMsg = "Not Found";
+
                         console.log("Not Found");
                     });
 
@@ -84,10 +86,12 @@
                         var found = response.data.menu_items;
 
                         for (var i = 0; i < found.length; i++) {
-
-                            if (found[i].description.toLowerCase().indexOf(searchTerm.toLowerCase()) >= 0) {
+                            if (searchTerm === undefined) {
+                                console.log("EMPTY");
+                            } else if (found[i].description.toLowerCase().indexOf(searchTerm.toLowerCase()) >= 0) {
                                 foundItems.push(found[i]);
                             }
+
                         }
                         // return processed items
                         return foundItems;
@@ -96,6 +100,9 @@
 
             service.removeItem = function(index) {
                 foundItems.splice(index, 1);
+                if (foundItems.length == 0) {
+                    console.log("Empty value");
+                }
             }
 
             service.getSearchList = function() {

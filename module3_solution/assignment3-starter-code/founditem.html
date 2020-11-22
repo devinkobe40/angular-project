@@ -2,7 +2,6 @@
 <h3>{{menu.myTitle}}</h3>
 <ol>
   <li ng-repeat="item in menu.foundItems">
-    <!-- {{item.description}} -->
     <table class="table">
   <thead>
     <tr>
@@ -24,3 +23,4 @@
     <button class="btn btn-primary" ng-click="menu.onRemove({index: $index});">Don't want this one!</button>
   </li>
 </ol>
+<div class="error" ng-if="menu.foundItems == 0">Nothing Found!</div>
