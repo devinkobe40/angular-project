@@ -2,7 +2,10 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Hello </title>
+    <title>To Do List</title>
+    <script src="angular.min.js"></script>
+    <script src="modules/todolist.controller.js"></script>
+    <script src="modules/todolist.service.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
@@ -20,26 +23,29 @@
         font-size: 70px;
       }
     </style>
+
   </head>
-  <body>
-    <center>
-      <p class="size-1 lead">Assignments:</p>
-      <ul>
-        <li><a href="module1_solution/assignment1-starter-code/index.html">
-          Assignment1</a></li>
-        <li><a href="module2_solution/assignment2-starter-code/index.html">
-          Assignment2</a></li>
-        <li><a href="module3_solution/assignment3-starter-code/index.html">
-          Assignment3</a></li>
-      </ul>
-      <div class="space">
-        <p class="size-1 lead">Practices</p>
-        <ol>
-          <li>
-            <a href="Practices/ToDoList/index.html">To Do List</a>
-          </li>
-        </ol>
+  <body ng-app='ToDoList'>
+      <div class="float-left" style="position: absolute; left: 50px;" ng-controller='ToDoListController as list'>
+          <p class="size-1 lead">To Do List</p>
+          <div class="space">
+          <input type="text" ng-model="list.task" placeholder="Enter your To do list">
+          <button class="btn btn-outline-primary" ng-click="list.newTask();">Submit</button>
+          <!-- {{list.task}} -->
+        </div>
       </div>
-    </center>
+
+      <div class="float-right" style="position: absolute; right: 50px;" ng-controller='ToDoListController as task'>
+        <p class="size-1 lead">Checked</p>
+        <div class="space">
+          <ol class="left">
+            <li ng-repeat="item in task.unfinishedTask">
+              <p class="lead">
+                {{item}}
+              </p>
+            </li>
+          </ol>
+        </div>
+      </div>
   </body>
 </html>
