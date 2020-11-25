@@ -11,13 +11,16 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <style media="screen">
+      p.error {
+        color: red;
+      }
       .space {
         margin-top: 40px;
         position: relative;
       }
-      ol.left{
-        position: relative;
-        right: 60px;
+      ol.right{
+        position: auto;
+        right: auto;
       }
       p.size-1{
         font-size: 70px;
@@ -26,25 +29,37 @@
 
   </head>
   <body ng-app='ToDoList'>
-      <div class="float-left" style="position: absolute; left: 50px;" ng-controller='ToDoListController as list'>
+      <div class="" style="position: absolute; left: 50px;" ng-controller='ToDoListController as list'>
           <p class="size-1 lead">To Do List</p>
           <div class="space">
           <input type="text" ng-model="list.task" placeholder="Enter your To do list">
           <button class="btn btn-outline-primary" ng-click="list.newTask();">Submit</button>
-          <!-- {{list.task}} -->
+
+          <div class="space">
+            <ol>
+              <li ng-repeat="item in list.unFinishedTask(); track by $index">
+                <p class="lead">
+                  {{item}}
+                  <button class="btn btn-outline-warning" ng-click="list.finishedTask($index);">Done</button>
+                </p>
+              </li>
+            </ol>
+            <div ng-if="list.unFinishedTask().length == 0"><p class="lead error">NO task have been made yet.</p></div>
+          </div>
         </div>
       </div>
 
-      <div class="float-right" style="position: absolute; right: 50px;" ng-controller='ToDoListController as task'>
+      <div class="" style="position: absolute; right: 50px;" ng-controller='ToDoListController as task'>
         <p class="size-1 lead">Checked</p>
         <div class="space">
-          <ol class="left">
-            <li ng-repeat="item in task.unfinishedTask">
+          <ol class="right">
+            <li ng-repeat="item in task.listFinishedTask(); track by $index">
               <p class="lead">
-                {{item}}
+                Finished doing {{item}}
               </p>
             </li>
           </ol>
+          <div ng-if="task.listFinishedTask().length == 0"><p class="lead error">NO finished task yet.</p></div>
         </div>
       </div>
   </body>

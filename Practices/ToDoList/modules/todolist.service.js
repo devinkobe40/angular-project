@@ -7,18 +7,38 @@
     function TaskService(){
       var service = this;
       var list = [];
+      var checkedTask = [];
 
       service.insertNewTask = function (newTask) {
         console.log("Inserting new Task.");
-        list.push(newTask);
+
+        if (newTask == "") {
+          list.push("nothing");
+        }else {
+          list.push(newTask);
+        }
         console.log("Inserted ", list," succesfully");
 
       }
+
+      service.checkTask = function (index) {
+
+          for (var i = 0; i < list.length; i++) {
+            // putting it on ongoing task
+            checkedTask.push(list[i]);
+          }
+          // removed it from the ongoing task
+          list.splice(index, 1);
+          console.log("removed ",list[index]);
+        }
 
       service.getTask = function () {
         return list;
       }
 
+      service.getCheckTask = function () {
+        return checkedTask;
+      }
     };
 
   }
