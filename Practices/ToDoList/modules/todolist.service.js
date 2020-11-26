@@ -25,10 +25,10 @@
 
           // putting it on ongoing task
           checkedTask.push(list[index]);
-          
+
           // removed it from the ongoing task
-          list.splice(index, 1);
           console.log("removed ",list[index]);
+          list.splice(index, 1);
         }
 
       service.getTask = function () {
