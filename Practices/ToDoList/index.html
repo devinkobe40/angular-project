@@ -11,6 +11,11 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <style media="screen">
+      path:hover, a:hover {
+        font-weight: bolder;
+        cursor: pointer;
+        stroke: blue;
+      }
       p.error {
         color: red;
       }
@@ -26,7 +31,6 @@
         font-size: 70px;
       }
     </style>
-
   </head>
   <body ng-app='ToDoList'>
       <div class="" style="position: absolute; left: 50px;" ng-controller='ToDoListController as list'>
@@ -40,7 +44,12 @@
               <li ng-repeat="item in list.unFinishedTask(); track by $index">
                 <p class="lead">
                   {{item}}
-                  <button class="btn btn-outline-warning" ng-click="list.finishedTask($index);">Done</button>
+                  <a ng-click="list.finishedTask($index);"><svg xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24" width="24" height="24"><path fill-rule="evenodd"
+
+                  d="M21.03 5.72a.75.75 0 010 1.06l-11.5
+                  11.5a.75.75 0 01-1.072-.012l-5.5-5.75a.75.75 0 111.084-1.036l4.97
+                  5.195L19.97 5.72a.75.75 0 011.06 0z"></path></svg>Done</a>
                 </p>
               </li>
             </ol>

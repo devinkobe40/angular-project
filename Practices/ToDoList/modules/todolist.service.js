@@ -23,10 +23,9 @@
 
       service.checkTask = function (index) {
 
-          for (var i = 0; i < list.length; i++) {
-            // putting it on ongoing task
-            checkedTask.push(list[i]);
-          }
+          // putting it on ongoing task
+          checkedTask.push(list[index]);
+          
           // removed it from the ongoing task
           list.splice(index, 1);
           console.log("removed ",list[index]);
