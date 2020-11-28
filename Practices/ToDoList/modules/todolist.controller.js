@@ -1,7 +1,7 @@
 (
   function(){
-    "use strict";
-    angular.module("ToDoList",[])
+    'use strict';
+    angular.module("ToDoList")
     .controller("ToDoListController", ToDoListController);
 
     ToDoListController.inject = ["TaskService"];
