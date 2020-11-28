@@ -1,0 +1,24 @@
+div.center{
+  margin: auto;
+  /* padding: 20px; */
+  width: 50%;
+  /* margin-left: 50%;
+  margin-right: 50%; */
+}
+
+div.space{
+  margin-top: 40px;
+}
+
+p.head{
+  font-family: Gill Sans Extrabold, sans-serif;;
+  font-size: 25px;
+}
+
+p.medium{
+  font-size: 30px;
+}
+
+ol.left{
+  padding-left: 5%;
+}

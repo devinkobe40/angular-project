@@ -1,5 +1,41 @@
 <ol>
-  <li ng-repeat="items in $ctrl.list">
-      {{items.name}}
-  </li>
+  <div class="container">
+    <div class="space">
+      <p class="lead medium">
+        DishName
+      </p>
+      <li ng-repeat="items in $ctrl.list">
+        <div class="card">
+          <!-- Head -->
+          <div class="card card-head">
+            <p class="head">
+               {{items.short_name}} || {{items.name}}
+            </p>
+          </div>
+
+          <!-- Body -->
+          <div class="card card-body">
+              <!-- Description -->
+              <p class="lead medium">Description:</p>
+              <div class="container">
+                <p class="lead">
+                  {{items.description}}
+                </p>
+              </div>
+
+              <!-- Price -->
+              <p class="lead medium">Price: </p>
+              <div ng-if="items.price_small">
+                <p class="lead">Small Order: {{items.price_small | currency: $}}</p>
+              </div>
+              <div ng-if="items.price_large">
+                <p class="lead">Large Order: {{items.price_large | currency: $}}</p>
+              </div>
+
+          </div>
+
+        </div>
+      </li>
+    </div>
+  </div>
 </ol>
