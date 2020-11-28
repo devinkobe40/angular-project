@@ -22,6 +22,7 @@
             for (var i = 0; i < category.length; i++) {
               list.push(category[i])
             }
+            console.log(list);
             return list;
         });
 

@@ -13,6 +13,16 @@ div.center{
   width: 50%;
 }
 
+.carousel-img{
+  height: 500px;
+  width: 500px;
+}
+
+.font-caption{
+  font-size: 25px;
+  color: black;
+}
+
 div.space{
   margin-top: 40px;
 }

@@ -1,7 +1,17 @@
 <ol class="left">
   <li ng-repeat="category in $ctrl.categories"
     ><a ui-sref='menuDetail({short_name:category.short_name})'>
-      {{category.name}}
+      <div class="card">
+        <div class="card-header">
+          {{category.name}}
+        </div>
+      </div>
     </a>
+      <div class="card">
+        <div class="card-body" ng-if="category.special_instructions">
+          <p class="lead medium">Information:</p>
+            {{category.special_instructions}}
+        </div>
+      </div>
   </li>
 </ol>
