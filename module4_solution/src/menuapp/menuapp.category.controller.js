@@ -8,7 +8,6 @@
     MenuAppCategoryController.inject = ['MenuDataService','categories'];
     function MenuAppCategoryController(MenuDataService,categories) {
       var category = this;
-      console.log("categories: ", categories);
       category.categories = categories;
 
     }

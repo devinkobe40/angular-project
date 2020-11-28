@@ -12,11 +12,29 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   </head>
   <body ng-app='MenuApp'>
-        <div class="center">
-          <h1>Welcome to the Restaurant</h1>
+    <nav class="navbar navbar-expand-lg navbar-dark transparent">
+      <span class="navbar-brand mb-0 h1 lead">Restaurant</span>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" ui-sref="home">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" ui-sref="categories">Categories</a>
+            </li>
+          </ul>
         </div>
+    </nav>
+        <!-- <div class="center">
+          <h1>Welcome to the Restaurant</h1>
+        </div> -->
 
+        <loading-spinner></loading-spinner>
         <ui-view></ui-view>
+
 
         <!-- Libraries -->
         <script src="lib/angular.min.js" charset="utf-8"></script>
@@ -25,6 +43,7 @@
         <!-- Modules -->
         <script src="src/menuapp/menuapp.module.js"></script>
         <script src="src/menuapp/menuapp.data.module.js"></script>
+        <script src="src/spinner/spinner.module.js" charset="utf-8"></script>
 
         <!-- Routes -->
         <script src="src/route.js"></script>
@@ -33,6 +52,7 @@
         <script src="src/menuapp/menuapp.service.js" charset="utf-8"></script>
         <script src="src/menuapp/menuapp.detail.controller.js" charset="utf-8"></script>
         <script src="src/menuapp/menuapp.category.controller.js" charset="utf-8"></script>
+        <script src="src/spinner/loadingspinner.component.js" charset="utf-8"></script>
         <script src="src/menuapp/menuapp.component.js" charset="utf-8"></script>
         <script src="src/menuapp/menuapp.detail.component.js" charset="utf-8"></script>
 

@@ -38,7 +38,6 @@
         resolve: {
           menu: ['$stateParams', 'MenuDataService',
             function ($stateParams, MenuDataService) {
-              console.log($stateParams.short_name);
               // return MenuDataService.getAllCategories();
 
               return MenuDataService.getItemsForCategory($stateParams.short_name);

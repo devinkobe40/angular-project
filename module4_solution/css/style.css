@@ -1,9 +1,16 @@
+body{
+  background-image: url("../images/background.jpg");
+  background-position: center;
+  background-repeat: repeat;
+}
+a:hover{
+  font-weight: 500;
+  /* font-size: 30px; */
+}
+
 div.center{
   margin: auto;
-  /* padding: 20px; */
   width: 50%;
-  /* margin-left: 50%;
-  margin-right: 50%; */
 }
 
 div.space{
@@ -17,6 +24,10 @@ p.head{
 
 p.medium{
   font-size: 30px;
+}
+
+p.small{
+  font-size: 15px;
 }
 
 ol.left{

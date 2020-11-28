@@ -10,7 +10,6 @@
     function MenuDataService($http, ApiBaseUrl) {
       var data = this;
 
-      console.log("Authenticating...");
 
       data.getAllCategories = function () {
         return $http({
@@ -23,7 +22,6 @@
             for (var i = 0; i < category.length; i++) {
               list.push(category[i])
             }
-            console.log(list);
             return list;
         });
 
@@ -32,7 +30,6 @@
 
       data.getItemsForCategory = function (short_name) {
 
-        console.log("passed ",short_name);
         return $http({
           method: 'GET',
           url: (ApiBaseUrl + "/menu_items.json"),
@@ -43,8 +40,6 @@
         .then(function (response) {
           // var menu_list = [];
           var items = response.data.menu_items;
-          console.log("items",items);
-
           return items;
           // for (var i = 0; i < items.length; i++) {
           //   menu_list.push(items[i]);
