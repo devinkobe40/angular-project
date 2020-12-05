@@ -1,0 +1,38 @@
+input {
+  color: black;
+  width: 100%;
+  height: 40px;
+  border-radius: 8px;
+}
+legend {
+  color: black;
+  font-size: 50px;
+}
+
+button:hover {
+  border-color: #210510;
+  cursor: pointer;
+}
+
+button {
+  background-color: gray;
+  color: #210510;
+  width: 10%;
+  height: 40px;
+  border-radius: 12px;
+}
+
+div.space {
+  margin-top: 10px;
+}
+
+p {
+  font-size: 30px;
+}
+.ng-touched.ng-valid {
+  border: 2px green solid;
+}
+
+.ng-touched.ng-invalid {
+  border: 2px red solid;
+}
