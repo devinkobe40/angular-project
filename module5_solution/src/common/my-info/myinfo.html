@@ -1,3 +1,8 @@
 <link rel="stylesheet" href="css/detail.css"></link>
 
-<info-detail detail="info.info" link="info.link"></info-detail>
+<info-detail ng-if="info.link.name" detail="info.info" link="info.link"></info-detail>
+<div ng-if="!info.link.name" class="container">
+  Not signed in yet. <a ui-sref="public.signup">
+    Sign up now!.
+  </a>
+</div>
