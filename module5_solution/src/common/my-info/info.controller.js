@@ -9,8 +9,9 @@
     var $ctrl = this;
 
     $ctrl.info = infoDetail;
+    console.log("dishes",link);
     $ctrl.link = link;
-    
+
   }
 
 })();

@@ -1,0 +1,141 @@
+<div class="container">
+  <header>
+    <legend>
+      <h1>My Information</h1>
+    </legend>
+  </header>
+  <section class="space">
+    <p>
+      First:
+    </p>
+    <p class="detail" ng-if="!$ctrl.detail.FirstName">
+      Unavailable!
+    </p>
+    <p class="detail">
+      {{$ctrl.detail.FirstName}}
+
+    </p>
+
+  </section>
+  <section class="space">
+    <p>
+      Last:
+
+    </p>
+    <p class="detail" ng-if="!$ctrl.detail.LastName">
+      Unavailable!
+    </p>
+    <p class="detail">
+      {{$ctrl.detail.LastName}}
+
+    </p>
+
+  </section>
+  <section class="space">
+    <p>
+      Phone:
+
+    </p>
+    <p class="detail" ng-if="!$ctrl.detail.phone">
+      Unavailable!
+    </p>
+    <p class="detail">
+
+      {{$ctrl.detail.phone}}
+
+    </p>
+  </section>
+  <section class="space">
+    <p>
+      Dish:
+
+    </p>
+    <p class="detail" ng-if="!$ctrl.detail.dish">
+      Unavailable!
+    </p>
+    <p class="detail">
+      {{$ctrl.detail.dish}}
+
+    </p>
+
+  </section>
+
+  <section class="space">
+    <p>
+      Email:
+
+    </p>
+    <p class="detail">
+      {{$ctrl.detail.email}}
+
+    </p>
+
+  </section>
+
+
+  <!-- Dish -->
+
+  <section class="space">
+    <legend>
+      Favorite Dish:
+    </legend>
+      <img class="img-responsive" width="500" height="350" ng-if="$ctrl.link.image_present"
+      ng-src="{{$ctrl.basePath}}/images/{{$ctrl.link.short_name}}.jpg"
+      alt="{{$ctrl.menuItem.name}}">
+      <p class="detail">{{$ctrl.link.short_name}}</p>
+    <p>
+      Dish Name:
+    </p>
+    <p class="detail" ng-if="!$ctrl.link.name">
+      Unavailable !
+    </p>
+    <p class="detail">
+      {{$ctrl.link.name}}
+
+    </p>
+    <p>
+      Description:
+    </p>
+    <p class="detail" ng-if="!$ctrl.link.description">
+      Unavailable !
+    </p>
+    <p class="detail">
+      {{$ctrl.link.description}}
+
+    </p>
+    <p>
+      Large Portion Name:
+
+    </p>
+    <p class="detail" ng-if="!$ctrl.link.large_portion_name">
+      Unavailable !
+    </p>
+    <p class="detail">
+      {{$ctrl.link.large_portion_name}}
+
+    </p>
+    <p>
+      Price (large):
+    </p>
+    <p class="detail" ng-if="!$ctrl.link.price_large">
+      Unavailable !
+    </p>
+    <p class="detail">
+      {{$ctrl.link.price_large}}
+
+    </p>
+    <p>
+      Price (small):
+    </p>
+    <p class="detail" ng-if="!$ctrl.link.price_small">
+      Unavailable !
+    </p>
+    <p class="detail">
+      {{$ctrl.link.price_small}}
+
+    </p>
+
+  </section>
+
+
+</div>
